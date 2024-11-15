@@ -96,6 +96,6 @@ class EmployeeController extends Controller
     {
         $employee = Employee::findOrFail($id);
         $employee->delete();
-        return response()->json(['success' => 'Employee deleted successfully.']);
+        return redirect()->route('employees.index')->with('success', 'Employee deleted successfully.');
     }
 }

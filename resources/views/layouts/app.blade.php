@@ -31,12 +31,14 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <!-- New Menu Items -->
+                        @auth
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('companies.index') }}">Company</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('employees.index') }}">Employee</a>
                         </li>
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -46,12 +48,6 @@
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
